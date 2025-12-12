@@ -15,7 +15,7 @@ jobs:
       uses : actions/setup-node@v6
 
     - name : install 
-      runs : npm install
+      run : npm install
 
     - name : runs 
-      runs : node server.js
+      run : node server.js
