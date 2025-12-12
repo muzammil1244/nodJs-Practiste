@@ -1,0 +1,21 @@
+name: CI
+on:
+ push:
+  branch: ["main"]
+
+jobs:
+  build:
+   runs-build: "ubuntu-latest"
+
+   steps:
+    - name : Check out the code
+      uses: actions/checkout@v6
+
+    - name : node js setup 
+      uses : actions/setup-node@v6
+
+    - name : install 
+      runs : npm install
+
+    - name : runs 
+      runs : node server.js
