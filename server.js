@@ -1,10 +1,14 @@
-import express from "express"
 
-const app = express()
+import path from "path"
+import { fileURLToPath } from "url"
 
 
-app.get("/",(req,res)=>{
-res.send("hi muzzmail how are you hmm ")
-})
+let filepath = fileURLToPath(import.meta.url) // output is file proper path
+let __dirname = path.dirname(filepath) // output : folder path in which this file exist
 
-app.listen(8000,()=>console.log("server is started "))
+console.log(__dirname)
+
+let newpath = path.join("newf","one","two","three")
+console.log(newpath) // add new path 
+
+console.log(path.resolve(newpath))
